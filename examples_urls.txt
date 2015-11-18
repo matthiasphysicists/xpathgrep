@@ -1,0 +1,5 @@
+xpath  = "/html/body/div/div/div[2]/div[2]/div/div/div/table/tbody/tr[33]/td[2]/a/text()"
+url    = "http://www.fuw.edu.pl/wyszukiwanie-pracownikow.html"
+
+xpath2 = "/html/body/div[3]/div/div/div[2]/p/text()"
+url2   = "http://www.water.org"
