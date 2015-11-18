@@ -1,11 +1,14 @@
-#!/usr/bin/python
+#! python3
 import sys
 import urllib2
 from scrapy.selector import Selector    # tested with scrapy 0.20.2
+from cookielib import CookieJar
 
-def xpathgrep(xpath, url):
-    with urllib2.urlopen(url) as page_handle:
-        html_source = page_handle.read()
+def xpathgrep_v2(xpath, url):
+    cj = CookieJar()
+    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+    page_handle = opener.open(url)
+    html_source = page_handle.read()
     selector = Selector(text=html_source)
     return '\t'.join(selector.xpath(xpath).extract())
 
