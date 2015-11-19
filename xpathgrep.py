@@ -4,7 +4,7 @@ import urllib2
 from scrapy.selector import Selector    # tested with scrapy 0.20.2
 from cookielib import CookieJar
 
-def xpathgrep_v2(xpath, url):
+def xpathgrep(xpath, url):
     cj = CookieJar()
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
     page_handle = opener.open(url)
